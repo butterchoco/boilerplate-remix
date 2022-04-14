@@ -8,9 +8,19 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import styles from "./styles/app.css";
+import fullCalendarCss from "@fullcalendar/common/main.css";
+import fullCalendarDayGridCss from "@fullcalendar/daygrid/main.css";
+import fullCalendarTimeGridCss from "@fullcalendar/timegrid/main.css";
+import reactCalendarCss from "react-calendar/dist/Calendar.css";
 
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: styles },
+    { rel: "stylesheet", href: fullCalendarCss },
+    { rel: "stylesheet", href: fullCalendarDayGridCss },
+    { rel: "stylesheet", href: fullCalendarTimeGridCss },
+    { rel: "stylesheet", href: reactCalendarCss },
+  ];
 }
 
 export const meta: MetaFunction = () => ({

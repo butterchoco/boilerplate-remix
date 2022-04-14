@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const UseFocus = (fn: () => void) => {
+const useFocus = (fn: () => void) => {
   useEffect(() => {
     const revalidate = () => {
       if (document.visibilityState === "visible") {
@@ -15,4 +15,4 @@ const UseFocus = (fn: () => void) => {
   return null;
 };
 
-export default UseFocus;
+export default useFocus;

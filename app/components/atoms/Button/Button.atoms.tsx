@@ -43,7 +43,7 @@ const Button: React.FC<ButtonType> = ({
 
   return (
     <button
-      className={`block rounded-lg px-2 py-1 font-semibold ${getDefaultStyle[variants][colorScheme]} ${extraStyle}`}
+      className={`block rounded-lg p-2 font-semibold ${getDefaultStyle[variants][colorScheme]} ${extraStyle}`}
       {...props}
     >
       {children}

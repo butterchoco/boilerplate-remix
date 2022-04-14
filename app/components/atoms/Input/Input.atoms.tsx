@@ -23,7 +23,7 @@ const Input: React.FC<InputType> = ({
   ...inputParams
 }) => {
   return (
-    <div className="w-full px-2 lg:max-w-lg">
+    <div className="w-full lg:max-w-lg my-2">
       <label
         className={`${
           required && "after:text-red-500 after:content-['*']"
@@ -38,22 +38,23 @@ const Input: React.FC<InputType> = ({
       )}
       <div className="relative w-full">
         {leftIcon && (
-          <span className="absolute flex items-center justify-center top-0 left-0 mx-3 h-10 w-5 max-h-full max-w-[2.5rem] text-slate-300">
+          <span className="absolute flex items-center justify-center mt-[0.05rem] top-1/2 -translate-y-1/2 left-0 mx-3 w-5 max-h-full max-w-[2.5rem] text-slate-300">
             {leftIcon}
           </span>
         )}
         <input
+          required={required}
           {...inputParams}
           className={`${
             error && touched
-              ? "border-red-500 focus:border-red-500"
+              ? "border-red-500 focus:border-red-500 animate-shakeX"
               : "border-gray-200 focus:border-indigo-500"
           } ${leftIcon && "pl-10"} ${
             rightIcon && "pr-10"
-          } bg-gray-50 w-full px-3 py-2 text-md border rounded-md placeholder:text-gray-300 focus:outline-none transition-colors`}
+          } mt-1 bg-gray-50 w-full px-3 py-2 text-md border rounded-md placeholder:text-gray-300 focus:outline-none transition-colors`}
         />
         {rightIcon && (
-          <span className="absolute flex items-center justify-center top-0 right-0 mx-3 h-10 w-5 max-h-full max-w-[2.5rem] text-slate-300">
+          <span className="absolute flex items-center justify-center mt-[0.05rem] top-1/2 -translate-y-1/2 right-0 mx-3 w-5 max-h-full max-w-[2.5rem] text-slate-300">
             {rightIcon}
           </span>
         )}

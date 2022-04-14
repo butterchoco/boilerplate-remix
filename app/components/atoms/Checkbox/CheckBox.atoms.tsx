@@ -1,6 +1,6 @@
 import React from "react";
 
-type RadioType = React.DetailedHTMLProps<
+type CheckBoxType = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 > & {
@@ -12,7 +12,7 @@ type RadioType = React.DetailedHTMLProps<
   rightIcon?: JSX.Element;
 };
 
-const Radio: React.FC<RadioType> = ({
+const CheckBox: React.FC<CheckBoxType> = ({
   label,
   description,
   error,
@@ -20,20 +20,20 @@ const Radio: React.FC<RadioType> = ({
   required,
   leftIcon,
   rightIcon,
-  ...radioParams
+  ...checkboxParams
 }) => {
   return (
     <div className="my-2">
       <label className="flex items-center gap-2 cursor-pointer">
         <input
-          type="radio"
+          type="checkbox"
           required={required}
-          {...radioParams}
+          {...checkboxParams}
           className={`${
             error && touched
               ? "border-red-500 focus:border-red-500 animate-shakeX"
               : "border-gray-200 focus:border-indigo-500"
-          } form-radio h-5 w-5 text-indigo-500`}
+          } form-checkbox rounded-md h-5 w-5 text-indigo-500`}
         />
         <span
           className={`${required && "after:text-red-500 after:content-['*']"}`}
@@ -50,4 +50,4 @@ const Radio: React.FC<RadioType> = ({
   );
 };
 
-export default Radio;
+export default CheckBox;
